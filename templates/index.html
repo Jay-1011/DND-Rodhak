@@ -1,0 +1,29 @@
+
+<html>
+  <head>
+    <title>DnD Rodhak Dashboard</title>
+    <link rel="stylesheet" href='../static/style.css'/>
+  </head>
+  <body>
+    <h1>DnD Rodhak Dashboard</h1>
+    <h3 style="color: grey">{{value_8}}</h3>
+
+    <label class="switch">
+      <input type="checkbox" id="control" onclick="myFunction()" {% if value_8 == "HIGH" %} checked {% endif %}>
+      <span class="slider round"></span>
+    </label>
+
+    <h3><img src="{{ url_for('video_feed') }}" width="50%"></h3>
+    <hr>
+
+  <script>
+    function myFunction() {
+      {% if value_8 == "HIGH" %}
+       window.location.href = "{{ url_for('update_value', value='LOW') }}";
+      {% else %}
+       window.location.href = "{{ url_for('update_value', value='HIGH') }}";
+      {% endif %}
+    }
+  </script>
+  </body>
+</html>
