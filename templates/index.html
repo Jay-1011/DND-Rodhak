@@ -5,13 +5,17 @@
     <link rel="stylesheet" href='../static/style.css'/>
   </head>
   <body>
-    <h1>DnD Rodhak Dashboard</h1>
-    <h3 style="color: grey">{{value_8}}</h3>
+  <img src="../static/logo.jpeg" style="width: 120px;height: auto;">
+
+    <h3 style="color: grey">{% if value_8 == "HIGH" %} Turn Off {% else %} Switch On {% endif %}</h3>
+
 
     <label class="switch">
       <input type="checkbox" id="control" onclick="myFunction()" {% if value_8 == "HIGH" %} checked {% endif %}>
       <span class="slider round"></span>
     </label>
+
+
 
     <h3><img src="{{ url_for('video_feed') }}" width="50%"></h3>
     <hr>
